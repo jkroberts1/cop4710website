@@ -2,6 +2,8 @@
 <html>
 <head>
 <style>
+
+
 div.container {
     width: 100%;
     border: 1px solid gray;
@@ -114,18 +116,16 @@ article {
 
 <article>
 	  
-	  <fieldset>
-	  <h1>Sign In</h1>
-	  <form id="createAccount" action="registerAccount.php" name="createAccount" method="post" >
-	  <p>Username:
-	  <input required type ="text" placeholder="username" id="username" name="username" size="15"
-	  maxlength="30" /> </p>
-	  <p>Password:
-	  <input required type ="password" placeholder="password" id="password"  name="password"size="15"
-	  maxlength="30" /> </p>
-	  <input type="submit" id="submit" value="Create Account" name="submit" >
-	  <p>
-	  </form>
+	<fieldset>
+	<h1>Create Account</h1>
+	<form id="createAccount" action="registerAccount.php" name="createAccount" method="post" >
+	<p>Username:<input required type ="text" placeholder="username" id="username" name="username" size="15"
+	maxlength="30" /> </p>
+	<p>Password:<input required type ="password" placeholder="password" id="password"  name="password"size="15"
+	maxlength="30" /> </p>
+	
+	<input type="submit" id="submit" value="Create Account" name="submit" />
+	</form>
 	  <p>Have an account? <a href = "Homepage.html">Click Here</a> to Login.
 	  </p>
 	  </fieldset> 
