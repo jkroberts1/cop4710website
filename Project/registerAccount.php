@@ -1,4 +1,5 @@
 <?php
+session_start();
 $username = $_POST['username'];
 $password = sha1($_POST['password']);
 $accountType = %_POST['accType'];
@@ -11,6 +12,7 @@ try
   $stmt->bindParam(':username', $username, PDO::PARAM_STR);
   $stmt->bindParam(':password', $password, PDO::PARAM_STR, 40);
   $stmt->bindParam(':accountType', $accountType, PDO::PARAM_STR);
+  $stmt->bindParam(':reg_date', $reg_date, PDO::PARAM_STR);
   $stmt->execute();
   unset( $_SESSION['form_token'] );
 }
