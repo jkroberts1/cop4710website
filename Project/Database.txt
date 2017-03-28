@@ -1,0 +1,17 @@
+CREATE DATABASE PROJECT;
+
+CREATE TABLE Students (username: CHAR (20), password: CHAR (20), email: CHAR(10), email_extension: CHAR (20), u_name: CHAR(20) ,PRIMARY_KEY (Username), FOREIGN_KEY (u_name) REFERENCES University (u_name));
+
+CREATE TABLE Admin (username: CHAR (20), u_name: CHAR(20), PRIMARY KEY (username), FOREIGN_KEY (username) REFERENCES Students(username), FOREIGN_KEY (u_name) REFERENCES University (u_name));
+
+CREATE TABLE Students_Events (username: CHAR(20), ev_name: CHAR(20), PRIMARY KEY (username, ev_name), FOREIGN_KEY (username) REFERENCES Students (username),  FOREIGN_KEY (ev_name) REFERENCES Events (ev_name));
+
+
+CREATE TABLE Rso (rso_name: CHAR(20), username: CHAR (20),u_name: CHAR (20), date_made_YY: Int, date_made_MM: Int, date_made_DD: Int, FOREIGN_KEY (username) REFERENCES Admin (username), FOREIGN_KEY (u_name) REFERENCES University (u_name));
+
+CREATE TABLE Student_Rso (username: CHAR(20), rso_name: CHAR(20), FOREIGN_KEY (username) REFERENCES Students (username), FOREIGN_KEY (rso_name) REFERENCES Rso (rso_name));
+
+
+CREATE TABLE University (u_name: CHAR (20), num_students: Int, address: CHAR(40), PRIMARY_KEY (u_name));
+
+CREATE TABLE Events (ev_name: CHAR (20), type: CHAR (20), event_num: CHAR(20), u_name: CHAR (20), PRIMARY_KEY (event_num), FOREIGN_KEY (u_name) REFERENCES University (u_name))
