@@ -137,8 +137,9 @@ article {
      {
        if($password == $row["passsword"])
        {
-         echo "<br> Login Successful <br>";
          $_SESSION["username"] = $username;
+	 $_SESSION['logged'] = true
+         echo "<br> Login Successful <br>";
      }
   }
   else 
