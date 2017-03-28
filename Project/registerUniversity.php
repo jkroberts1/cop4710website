@@ -1,6 +1,6 @@
 <?php
 session_start();
-$name = $_POST['name'];
+$name = $_POST['u_name'];
 $location = $_POST['location'];
 $description = $_POST['description'];
 $numStudents = $_POST['numStudents'];
