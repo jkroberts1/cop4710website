@@ -127,12 +127,12 @@ article {
 
 <article>
 	  
-	  <fieldset>
-	  <h1>Logout</h1>
-    <?php
-      session_unset(); 
-      session_destroy(); 
-    ?>
+	<fieldset>
+	<h1>Logout</h1>
+    	<?php
+        $_SESSION["username"] = '';
+        $_SESSION["logged"] = false;
+    	?>
     <p>You Have Logged Out</p>
 	  <p>Need an account? <a href = "CreateAccount.html">Click Here</a> to Create Account
 	  </p>
