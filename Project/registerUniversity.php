@@ -10,7 +10,7 @@ try
   $reg_date = date("Y-m-d H:i:s");
   $dbh = new PDO("mysql:host='localhost';dbname='cop4710'", 'root', 'root');
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $stmt = $dbh->prepare("INSERT INTO universty (name, location, description, numStudents, reg_date) VALUES (:name, :location, :description, :numStudents, :reg_date)");
+  $stmt = $dbh->prepare("INSERT INTO universty (u_name, location, description, numStudents, reg_date) VALUES (:name, :location, :description, :numStudents, :reg_date)");
   $stmt->bindParam(':name', $name, PDO::PARAM_STR);
   $stmt->bindParam(':location', $location, PDO::PARAM_STR);
   $stmt->bindParam(':description', $description, PDO::PARAM_STR);
