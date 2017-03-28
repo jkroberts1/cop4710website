@@ -120,7 +120,7 @@ article {
 	<?php
   
   $username = $_POST['username'];
-  $password = sha1($_POST['password']);
+  $password = sha1($_POST['psw']);
   
   $dbh = new PDO("mysql:host='localhost';dbname='cop4710'", 'root', 'root');
   if ($dbh->connect_error)
@@ -128,14 +128,14 @@ article {
     die("Connection failed: " . $dbh->connect_error);
   } 
 
-  $stmt = "SELECT password FROM students WHERE user = $row["$username"]";
+  $stmt = "SELECT psw FROM students WHERE user = $row["$username"]";
   $result = $dbh->query($stmt);
 
   if ($result->num_rows > 0)
   {
      while($row = $result->fetch_assoc())
      {
-       if($password == $row["passsword"])
+       if($password == $row["psw"])
        {
          $_SESSION["username"] = $username;
 	 $_SESSION['logged'] = true
