@@ -15,6 +15,14 @@ CREATE TABLE Student_Rso (username VARCHAR(20), rso_name VARCHAR(20), FOREIGN KE
 
 CREATE TABLE University (u_name VARCHAR (20), num_students Int, address VARCHAR(40), PRIMARY KEY u_name);
 
+CREATE TABLE Petition (p_name VARCHAR (20), username VARCHAR(20), PRIMARY KEY p_name, FOREIGN KEY username REFERENCES Students (username))
+
+ALTER TABLE Petition ADD Primary Key (p_name)
+
+CREATE TABLE Petition_ (p_name VARCHAR (20), username VARCHAR(20), PRIMARY KEY p_name, FOREIGN KEY username REFERENCES Students (username), FOREIGN KEY p_name REFERENCES Petition)
+
 CREATE TABLE Events (ev_name VARCHAR (20), e_type VARCHAR (20), event_num VARCHAR(20), u_name VARCHAR (20), PRIMARY KEY event_num, FOREIGN KEY u_name REFERENCES University (u_name));
 //Foreign Key needs to be in form 
 //ALTER TABLE Orders ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+//Trigger Petition_ is = 5 becomes a Rso, then Petition is deleted
+//Make only unique student join petition no repetitions
