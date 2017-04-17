@@ -2,7 +2,6 @@
 <html>
 <head>
 <style>
-
 div.container {
     width: 100%;
     border: 1px solid gray;
@@ -16,7 +15,7 @@ footer {
 }
 header {
     color: white;
-    background-color: gold;
+    background-color: deepskyblue;
     text-align: center;
     overflow: hidden;
 	height: 140px;
@@ -42,6 +41,7 @@ header-right {
 }
 nav {
     float: left;
+    background-color: aliceblue;
 	top: 140px;
     max-width: 170px;
 	max-height: 150px;
@@ -109,23 +109,25 @@ article {
 
 <nav>
   <p>
-  Home
+  <a href = "Homepage.html">Home</a><br>
+  <a href = "newPetition.html">Create a Petition</a><br>
+  <a href = "signPetition.html">Sign a Petition</a><br>
+  <a href = "University.html">Lookup University</a><br>
+  <a href = "eventLookup.html">Lookup Event</a><br>
+<a href = "RSO.html">Lookup Organization</a><br>
   </p>
 </nav>
 
 <article>
-  
+	  
 	<fieldset>
-	<h1>Register University</h1>
-	<form id="registerUniversity" action="registerUniversity.php" name="registerUniversity" method="post" >
-	<p>University Name: <input required type ="text" placeholder="name" id="u_name" name="u_name" size="30"
-	maxlength="50" /> </p>
-	<p>Location: <input required type ="text" placeholder="location" id="location"  name="location" size="30"
-	maxlength="50" /> </p>
-	University Description:<br>
-	<textarea rows="4" cols="50" name="description" placeholder="Enter description here..." form="registerUniversity"></textarea>
-	<p>Number of Students: <input required type ="number" placeholder="" id="numStudents"  name="numStudents" size="15"
-	maxlength="7" /> </p>
+	<h1>Create Account</h1>
+	<form id="createAccount" action="registerAccount.php" name="createAccount" method="post" >
+	<p>Username: <input required type ="text" placeholder="username" id="username" name="username" size="15"
+	maxlength="30" /> </p>
+	<p>Password: <input required type ="password" placeholder="password" id="password"  name="password"size="15"
+	maxlength="30" /> </p>
+	
 	<p><input type="submit" id="submit" value="Create Account" name="submit" /></p>
 	</form>
 	  <p>Have an account? <a href = "Homepage.html">Click Here</a> to Login. </p>
