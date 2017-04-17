@@ -10,6 +10,10 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 // **********************************************************************
 
+// Made slight changes to this
+// All credit to Brian McNitt
+// http://trendmedia.com/news/infinite-rotating-images-using-jquery-javascript/
+
 $(window).load(function() {	//start after HTML, images have loaded
 
 	var InfiniteRotator = 
