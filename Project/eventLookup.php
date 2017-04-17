@@ -1,12 +1,17 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <style>
-
 div.container {
     width: 100%;
     border: 1px solid gray;
+}
+thing{
+    float: right;
+    width: 82px;
+    text-align: left;
+    color: white;
 }
 footer {
     padding: 1em;
@@ -17,7 +22,7 @@ footer {
 }
 header {
     color: white;
-    background-color: gold;
+    background-color: deepskyblue;
     text-align: center;
     overflow: hidden;
 	height: 140px;
@@ -43,6 +48,7 @@ header-right {
 }
 nav {
     float: left;
+    background-color: aliceblue;
 	top: 140px;
     max-width: 170px;
 	max-height: 150px;
@@ -69,6 +75,38 @@ article {
 	font-family: 'Sofia';
 	font-size: 40px;
 	vertical-align: middle;
+}
+.format1 {
+	color: black;
+	font-size: 24px;
+}
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 90%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+#EventsTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+}
+#EventsTable th, #EventsTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+#EventsTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+#EventsTable tr.header, #EventsTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
 }
 </style>
 </head>
@@ -110,47 +148,77 @@ article {
 
 <nav>
   <p>
-  Home
+  <a href = "Homepage.html">Home</a><br>
+  <a href = "newPetition.html">Create a Petition</a><br>
+  <a href = "signPetition.html">Sign a Petition</a><br>
+  <a href = "University.html">Lookup University</a><br>
+  <a href = "eventLookup.html">Lookup Event</a><br>
+<a href = "RSO.html">Lookup Organization</a><br>
   </p>
 </nav>
 
-<article>
+<article align="center">
+	<thing>.</thing>
+	<fieldset class="format1">
+		Event Lookup <br></br>
+
+	 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events..">
+
+<table id="EventsTable">
+  <tr class="header">
+    <th style="width:40%;">Name</th>
+    <th style="width:30%;">Event Type</th>
+    <th style="width:30%;">University</th>
+  </tr>
+    <?php
+    	$connect = mysqli_connect("localhost", "root", "", "cop4710");
+    	if(!$connect){
+    		echo "Error in DB" . die(mysqli_error());
+    	}
+        $sql = "SELECT * FROM events";
+        $result = mysqli_query($connect, $sql);
+        while($row = mysqli_fetch_array($result))
+    	{
+    	?>
+			<tr>
+				<td><?php echo $row["ev_name"]?></td>
+				<td><?php echo $row["e_type"]?></td>
+				<td><?php echo $row["u_name"]?></td>
+			</tr>
+    <?php
+   		}
+    ?>
+</table>
 	  
-	<fieldset>
-	<?php
-  $dbh = new PDO("mysql:host='localhost';dbname='cop4710'", 'root', 'root');
-  if ($dbh->connect_error)
-  {
-    die("Connection failed: " . $dbh->connect_error);
-  } 
-
-  $stmt = "SELECT name, category, time, date, location, phone, email FROM events";
-  $result = $dbh->query($stmt);
-
-  if ($result->num_rows > 0)
-  {
-     while($row = $result->fetch_assoc())
-     {
-         echo "<br> Event: ". $row["name"]. " - Category: ". $row["category"]. " - time: " . $row["time"] . " - date: " . $row["date"] . " - phone: " . $row["phone"] . " - email: " . $row["email"] . "<br>";
-     }
-  }
-  else 
-  {
-     echo "No Events Found";
-  }
-
-  $conn->close();
-  ?>  
-	<p>Have an account? <a href = "Homepage.html">Click Here</a> to Login.</p>
-	</fieldset> 
-	  
+	 </fieldset> 
 
 </article>
 
-<footer>Copyright &copy; COP4710DatbaseProject</footer>
+<footer>Copyright &copy; COP4710DatabaseProject</footer>
    
 
 </div>
+<script>
+	function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("EventsTable");
+  tr = table.getElementsByTagName("tr");
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}	  
+</script>
 
 </body>
 </html>
