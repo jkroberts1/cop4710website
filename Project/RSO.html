@@ -15,7 +15,7 @@ footer {
 }
 header {
     color: white;
-    background-color: gold;
+    background-color: deepskyblue;
     text-align: center;
     overflow: hidden;
 	height: 140px;
@@ -41,6 +41,7 @@ header-right {
 }
 nav {
     float: left;
+    background-color: aliceblue;
 	top: 140px;
     max-width: 170px;
 	max-height: 150px;
@@ -72,7 +73,6 @@ article {
 	color: black;
 	font-size: 24px;
 }
-
 #myInput {
     background-image: url('/css/searchicon.png'); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
@@ -83,24 +83,20 @@ article {
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
 }
-
 #RsoTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     border: 1px solid #ddd; /* Add a grey border */
     font-size: 18px; /* Increase font-size */
 }
-
 #RsoTable th, #RsoTable td {
     text-align: left; /* Left-align text */
     padding: 12px; /* Add padding */
 }
-
 #RsoTable tr {
     /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd; 
 }
-
 #RsoTable tr.header, #RsoTable tr:hover {
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
@@ -145,7 +141,12 @@ article {
 
 <nav>
   <p>
-  Home
+  <a href = "Homepage.html">Home</a><br>
+  <a href = "newPetition.html">Create a Petition</a><br>
+  <a href = "signPetition.html">Sign a Petition</a><br>
+  <a href = "University.html">Lookup University</a><br>
+  <a href = "eventLookup.html">Lookup Event</a><br>
+<a href = "RSO.html">Lookup Organization</a><br>
   </p>
 </nav>
 
@@ -188,7 +189,6 @@ article {
   filter = input.value.toUpperCase();
   table = document.getElementById("RsoTable");
   tr = table.getElementsByTagName("tr");
-
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
