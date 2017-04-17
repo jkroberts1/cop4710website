@@ -76,6 +76,38 @@ article {
 	font-size: 40px;
 	vertical-align: middle;
 }
+.format1 {
+	color: black;
+	font-size: 24px;
+}
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 90%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+#EventsTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+}
+#EventsTable th, #EventsTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+#EventsTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+#EventsTable tr.header, #EventsTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+}
 </style>
 </head>
 <body>
@@ -125,18 +157,42 @@ article {
   </p>
 </nav>
 
-<article>
+<article align="center">
 	<thing>.</thing>
-	<fieldset>
-	<h1>Event Lookup</h1>
-	<form id="eventLookup" action="eventLookup.php" name="eventLookup" method="post" >
-	<p>Event Location: <input required type ="text" placeholder="location" id="location" name="location" size="15" maxlength="30" /> </p>
-	<p><input type="submit" id="submit" value="Search for Events" name="submit" /></p>
-	</form>
-	  <p>Have an account? <a href = "Homepage.html">Click Here</a> to Login.
-	  </p>
-	  </fieldset> 
+	<fieldset class="format1">
+		Event Lookup <br></br>
+
+	 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events..">
+
+<table id="EventsTable">
+  <tr class="header">
+    <th style="width:40%;">Name</th>
+    <th style="width:30%;">Event Type</th>
+    <th style="width:30%;">University</th>
+  </tr>
+  <tbody>
+    <?php
+    	$connect = mysql_connect("localhost", "root", "root");
+    	if(!$connect)
+    	{
+    		die(mysql_error());
+    	}
+    	mysql_select_db("cop4710");
+    	$results = mysql_query("SELECT * FROM events");
+    	while($row = mysql_fetch_array($results))
+    	{
+    	?>
+			<tr>
+				<td><?php echo $row["ev_name"]?></td>
+				<td><?php echo $row["e_type"]?></td>
+				<td><?php echo $row["u_name"]?></td>
+			</tr>
+   		}
+    
+  </tbody>
+</table>
 	  
+	 </fieldset> 
 
 </article>
 
@@ -144,6 +200,27 @@ article {
    
 
 </div>
+<script>
+	function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("EventsTable");
+  tr = table.getElementsByTagName("tr");
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}	  
+</script>
 
 </body>
 </html>
