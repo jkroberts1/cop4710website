@@ -80,8 +80,6 @@ article {
   <img src="Logo.jpeg" alt="Mountain View" style="width:170px;height:140px;">
 </navheader>
 <header-right>
-	
-	<?php	session_start(); ?>
 
 	  <?php 
 	  if(isset($_SESSION['logged'])){
