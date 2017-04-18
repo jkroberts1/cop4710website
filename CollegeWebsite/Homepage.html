@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+thing{
+    float: right;
+    width: 82px;
+    text-align: left;
+    color: white;
+}
+footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+header {
+    color: white;
+    background-color: deepskyblue;
+    text-align: center;
+    overflow: hidden;
+    height: 140px;
+    left: 170px;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+navheader {
+    float: left;
+    max-width: 170px;
+    margin: 0;
+    max-height: 140px;
+	
+}
+header-right {
+    float: right;
+    width: 83px;
+    text-align: left;
+    border-bottom: 1px solid gray;
+    height: 132px;
+    padding-left: 1em;
+    padding-top: .5em;
+	
+}
+nav {
+    float: left;
+    background-color: aliceblue;
+    top: 140px;
+    max-width: 170px;
+    max-height: 150px;
+    margin: 0;
+    padding-left: 1em;
+    padding-top: 0em;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+article {
+    top: 140px;
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+.format {
+    color: black;
+    font-family: 'Sofia';
+    font-size: 40px;
+    vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<navheader>
+  <img src="Logo.jpeg" alt="Mountain View" style="width:170px;height:140px;">
+</navheader>
+
+<header-right>
+  <a href = "signin.html">Sign In</a><br>
+  <a href = "registerAccount.html">Register</a><br>
+</header-right>
+
+<header>
+<link href='//fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+ <h1 class="format" align="center"><br /> College Events </h1>
+</header>
+
+<nav>
+  <p>
+  <a href = "Homepage.html">Home</a><br>
+  <a href = "newPetition.php">Create a Petition</a><br>
+  <a href = "findPetition.php">Find a Petition</a><br>
+  <a href = "University.php">Lookup University</a><br>
+  <a href = "eventLookup.php">Lookup Event</a><br>
+  <a href = "RSO.php">Lookup Organization</a><br>
+  </p>
+</nav>
+
+<article>
+	  <thing>.</thing>
+	  <fieldset>
+	  <h1>Sign In</h1>
+	  <form id="signin" action="EventConnect.php" name="signin" method="post" >
+	  <p>Username:
+	  <input required type ="text" placeholder="username" id="username" name="username" size="15" maxlength="30" /></p>
+	  <p>
+	  Password:
+	  <input required type ="password" placeholder="password" id="password"  name="password"size="15" maxlength="30" />
+	  </p>
+	  <input type="submit" id="submit" value="Sign In" name="submit" >
+	  <p>
+	  </form>
+	  <p>Need an account? <a href = "registerAccount.html">Click Here</a> to Create Account
+	  </p>
+	  </fieldset> 
+	  
+
+</article>
+<div class="thing"></div>
+<footer>Copyright &copy; COP4710DatbaseProject</footer>
+   
+
+</div>
+
+</body>
+</html>

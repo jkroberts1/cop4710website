@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='//fonts.googleapis.com/css?family=Averia Serif Libre' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Carme' rel='stylesheet'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1"></script>
+    <script type="text/javascript" src="infinite-rotator.js"></script>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+header {
+    color: white;
+    background-color: deepskyblue;
+    text-align: center;
+    overflow: hidden;
+	height: 140px;
+	left: 170px;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+navheader {
+    float: left;
+    max-width: 170px;
+    margin: 0;
+    max-height: 140px;
+	
+}
+header-right {
+	float: right;
+	width: 100px;
+	text-align: left;
+	border-bottom: 1px solid gray;
+	height: 140px;
+	
+}
+nav {
+    float: left;
+    background-color: aliceblue;
+	top: 140px;
+    max-width: 170px;
+	max-height: 150px;
+    margin: 0;
+    padding: 1em;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+article {
+	top: 140px;
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+.format {
+	color: black;
+	font-family: 'Averia Serif Libre';
+    font-size: 40px;
+	vertical-align: middle;
+}
+.format1 {
+    color: black;
+    font-family: 'Carme';
+    font-size: 30px;
+    vertical-align: middle;
+} 
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<navheader>
+  <img src="Logo.jpeg" alt="Mountain View" style="width:170px;height:140px;">
+</navheader>
+<header-right>
+
+</header-right>
+<header>
+ <h1 class="format" align="center"><br /> College Events </h1>
+</header>
+
+<nav>
+  <p>
+  <a href = "Homepage.html">Home</a><br>
+  <a href = "newPetition.html">Create a Petition</a><br>
+  <a href = "signPetition.html">Sign a Petition</a><br>
+  <a href = "University.html">Lookup University</a><br>
+  <a href = "eventLookup.html">Lookup Event</a><br>
+<a href = "RSO.html">Lookup Organization</a><br>
+  </p>
+</nav>
+
+<article>
+	  <fieldset align="center">
+	  <h1 class="format1"><br />Fill out your student organization's name. If you become an organization you will act as the administrator for your organization's events.</h1>
+          
+	  <p>
+          <form action="/action_page.php">
+            Name of the new Student Organization: <input type="text" name="RSO">
+            <input align="right" type="submit" value="Submit">
+          </form>
+      </p>
+          
+	  <p>
+        
+        <div id="rotating-item-wrapper">
+        <img class="rotating-item" src="images/SO1.jpg" alt="Choir" width="700" height="350" />
+        <img class="rotating-item" src="images/SO2.png" alt="Involvement" width="700" height="350" />
+        <img class="rotating-item" src="images/SO3.jpg" alt="All hands in" width="700" height="350" />
+        <img class="rotating-item" src="images/SO4.jpg" alt="Furman Org" width="700" height="350" />
+        <img class="rotating-item" src="images/SO5.jpg" alt="Awkward organization" width="700" height="350" />
+        <img class="rotating-item" src="images/SO6.jpg" alt="Tabling" width="700" height="350" />
+        </div> 
+
+        <p>
+            Pictures of student organizations.
+        </p>
+        
+          
+      </p>
+	  </fieldset> 
+	  
+
+</article>
+
+<footer>Copyright &copy; COP4710DatbaseProject</footer>
+   
+
+</div>
+
+</body>
+</html>
