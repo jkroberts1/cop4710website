@@ -206,7 +206,6 @@ echo "</table>";
         
   
   ?>  
-	<p>Don't have an account? <a href = "registerAccount.html">Click Here</a> to Register.</p>
 	</fieldset> 
 	  
 
