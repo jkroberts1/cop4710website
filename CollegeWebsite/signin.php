@@ -7,6 +7,12 @@ div.container {
     width: 100%;
     border: 1px solid gray;
 }
+thing{
+    float: right;
+    width: 82px;
+    text-align: left;
+    color: white;
+}
 footer {
     padding: 1em;
     color: white;
@@ -118,7 +124,7 @@ article {
 </nav>
 
 <article>
-	  
+	<thing>.</thing>
 	<fieldset>
 	<?php
         
