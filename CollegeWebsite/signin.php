@@ -7,12 +7,6 @@ div.container {
     width: 100%;
     border: 1px solid gray;
 }
-thing{
-    float: right;
-    width: 82px;
-    text-align: left;
-    color: white;
-}
 footer {
     padding: 1em;
     color: white;
@@ -86,6 +80,8 @@ article {
   <img src="Logo.jpeg" alt="Mountain View" style="width:170px;height:140px;">
 </navheader>
 <header-right>
+	
+	<?php	session_start(); ?>
 
 	  <?php 
 	  if(isset($_SESSION['logged'])){
@@ -124,7 +120,7 @@ article {
 </nav>
 
 <article>
-	<thing>.</thing>
+	  
 	<fieldset>
 	<?php
         
@@ -212,6 +208,7 @@ echo "</table>";
         
   
   ?>  
+	<p>Don't have an account? <a href = "registerAccount.html">Click Here</a> to Register.</p>
 	</fieldset> 
 	  
 

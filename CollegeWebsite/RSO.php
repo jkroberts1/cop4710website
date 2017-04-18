@@ -177,7 +177,7 @@ article {
 			<tr>
 				<td><?php echo $row["rso_name"]?></td>
 				<td><?php echo $row["u_name"]?></td>
-				<td><?php echo $row["date_made_MM"] . "/" . $row["date_made_DD"] . "/" . $row["date_made_YY"]?></td>
+				<td><?php echo $row["date_made"] ?></td>
 			</tr>
     <?php
    		}

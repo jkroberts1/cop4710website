@@ -6,12 +6,6 @@ div.container {
     width: 100%;
     border: 1px solid gray;
 }
-thing{
-    float: right;
-    width: 82px;
-    text-align: left;
-    color: white;
-}
 footer {
     padding: 1em;
     color: white;
@@ -86,6 +80,10 @@ article {
 </navheader>
 <header-right>
 	
+	<?php
+	session_start(); // Right at the top of your script
+	?>
+
 	  <?php 
 	  if(isset($_SESSION['logged'])){
 	  if($_SESSION['logged']==true)
@@ -124,7 +122,7 @@ article {
 </nav>
 
 <article>
-	<thing>.</thing>
+	  
 	  <fieldset>
 	  <h1>Sign In</h1>
 	  <form id="signin" action="signin.php" name="signin" method="post" >
